@@ -219,7 +219,7 @@ se vaya feliz con su comida.
   * Haces test unitarios y has testeado tu producto por tu cuenta
   * Desplegaste tu aplicación y has etiquetado tu versión desplegada (git tag)
 
-[comment]: <> (Historia de usuario de administrador que ve las estadisticas del restorán, así como también manejar el personal que tiene acceso a la aplicación)
+[//]: <> (Historia de usuario de administrador que ve las estadisticas del restorán, así como también manejar el personal que tiene acceso a la aplicación)
 
 ## Primeros pasos
 
