@@ -163,124 +163,63 @@ repositorio.
 
 ### Definición del producto
 
-En el `README.md` cuéntanos qué decisiones de diseño tomaste, incluye bocetos
-tipo _story board_, info de despliegue e instrucciones para developers
-(dependencias, instalación, tests, ...).
+El product owner del proyecto ha conversado con el cliente y luego de una
+reunión con el project manager han logrado crear el siguiente backlog:
 
-### UI
+#### [Historia de usuario] Mesero/a debe poder tomar orden de una persona
+Yo como mesero o mesara debería poder tomar la orden de un cliente para saber
+fácilmente cuanto cobrar y que la cocina tenga las órdenes de manera inmediata
+y según cuando van llegando.
 
-#### Hito 1: Tomar pedidos
+##### Definición de terminado
+  * Anotar nombre de cliente
+  * Agregar productos al pedido
+  * Eliminar productos
+  * Ver resumen y el total de la compra
+  * Enviar pedido a cocina (guardar en alguna base de datos)
+  * Se ve y funciona bien en una tablet
 
-* Ingresar nombre del cliente.
-* Filtrar _menú_ por _desayuno_ y _resto del día_.
-* Agregar ítem al pedido.
-* Eliminar ítem del pedido.
-* Mostrar _resumen_ de pedido con todos los items y el total.
-* Enviar a cocina (esto debe guardar el pedido).
+##### Criterios de aceptación
+  * Debes haber recibido code review de al menos una compañera
+  * Hiciste tests de usabilidad e incorporaste el feedback del mesero o mesera
+  * Haces test unitarios y has testeado tu producto por tu cuenta
+  * Desplegaste tu aplicación y has etiquetado tu versión desplegada (git tag)
 
-#### Hito 2: Ver/atender pedidos
+#### [Historia de usuario] Jefe de cocina debe poder ver ordenes
+Yo como cocinero o cocinera debería poder ver las órdenes de los clientes y
+marcar cuales están listas para saber qué se debe cocinar y avisar al mesero
+que una orden está lista.
 
-* Vista de pedidos pendientes
-* Marcar pedido como listo
-* Ver historial de pedidos
+##### Definición de terminado
+  * Ver los pedidos ordenados según van llegando
+  * Marcar los pedidos que se han terminado
+  * Ver el tiempo que tomó el pedido
 
-#### Hito 3: Autenticación
+##### Criterios de aceptación
+  * Debes haber recibido code review de al menos una compañera
+  * Hiciste tests de usabilidad e incorporaste el feedback del cocinero o
+  cocinera
+  * Haces test unitarios y has testeado tu producto por tu cuenta
+  * Desplegaste tu aplicación y has etiquetado tu versión desplegada (git tag)
 
-* Inicio de sesión
-* Restaurar contraseña
+#### [Historia de usuario] Mesero/a debe poder ver órdenes listas para servir para entregarlas a los clientes
+Yo como mesero o mesera debería poder ver las órdenes que han sido cocinadas y
+están listas para servir a los clientes, para así entregarlas y que el cliente
+se vaya feliz con su comida.
 
-### UX
+#### Definición de terminado
+  * Ver listado de órdenes terminadas
+  * Marcar pedidos que han sido entregados
 
-* Debe **verse bien y funcionar bien en tablets**.
-* **No queremos una app nativa**, sino una web app que se pueda _agregar a la
-  pantalla de inicio_ como PWA.
-* Queremos botones grandes para fácil uso en pantallas táctiles (touch screens).
-* Queremos el estado actual del pedido siempre visible mientras tomamos un
-  pedido.
-* Queremos que sea accesible y que funcione bien en tablets iOS y Android.
+##### Criterios de aceptación
+  * Los datos se deben mantener íntegros, incluso después de que un pedido ha
+  terminado. Todo esto para tener estadísticas de lo que ha hecho Burger queen
+  * Debes haber recibido code review de al menos una compañera
+  * Hiciste tests de usabilidad e incorporaste el feedback del mesero o mesera
+  * Haces test unitarios y has testeado tu producto por tu cuenta
+  * Desplegaste tu aplicación y has etiquetado tu versión desplegada (git tag)
 
-## Hacker edition
-
-Una vez que tengamos el sistema básico implementado, nos gustaría explorar
-nuevas posibilidades, y estamos abiertos a cualquier sugerencia que tengan.
-Algunas de las ideas que nos ha sugerido nuestros clientes son:
-
-* agregar combos al menú
-* cupones de descuento
-* programa de fidelidad, etc.
-* agregar _mesas_, de forma que los pedidos se puedan tomar en mesa en vez de
-  dando el nombre del cliente al cajero.
-* crear/editar/borrar usuarios
-* ver estadísticas de pedidos
-
-## Entregables
-
-El proyecto será _entregado_ subiendo tu código a GitHub (`commit`/`push`) y la
-interfaz será desplegada usando GitHub pages u otro servicio de hosting que
-puedas haber encontrado en el camino.
-
-## Evaluación
-
-Te aconsejamos revisar [la rúbrica](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRktPN4ilZtkRN5tUb3DVhgeihwlzk63_-JI3moA-bXpKDbHDioAK2H3qbrwWNb0Ql4wX22Tgv7-PDv/pubhtml)
-para ver la descripción detallada de cada _habilidad_ y cada _nivel_. Esta es
-una lista de todas las habilidades involucradas en este proyecto y que
-evaluaremos cuando lo  completes:
-
-### General
-
-| Característica | Nivel esperado |
-|----------------|----------------|
-| Completitud    | 4              |
-
-### Habilidades Blandas
-
-Para este proyecto esperamos que ya hayas alcanzado el nivel 4 en todas tus
-habilidades blandas. Te aconsejamos revisar la rúbrica:
-
-| Habilidad                    | Nivel esperado |
-|------------------------------|----------------|
-| **Autogestión**                               |
-| Planificación y organización | 4              |
-| Autoaprendizaje              | 4              |
-| Presentaciones               | 4              |
-| Adaptabilidad                | 4              |
-| Solución de problemas        | 4              |
-| **Relaciones interpersonales**                |
-| Responsabilidad              | 4              |
-| Dar y recibir feedback       | 4              |
-| Comunicación eficaz          | 4              |
-
-### Tech
-
-| Habilidad              | Nivel esperado |
-|------------------------|----------------|
-| **CS**                                  |
-| Lógica                 | 2              |
-| Arquitectura           | 3              |
-| Patrones/Paradigmas    | 2              |
-| **SCM**                                 |
-| Git                    | 3              |
-| GitHub                 | 3              |
-| **JavaScript**                          |
-| Estilo                 | 3              |
-| Nomenclatura/semántica | 3              |
-| Funciones/modularidad  | 4              |
-| Estructuras de datos   | 3              |
-| Tests                  | 3              |
-| **HTML**                                |
-| Validación             | 3              |
-| Estilo                 | 3              |
-| Semántica              | 4              |
-| **CSS**                                 |
-| DRY                    | 4              |
-| Responsive             | 4              |
-
-### UX
-
-| Habilidad       | Nivel esperado |
-|-----------------|----------------|
-| User Centricity | 3              |
-| Visual Design   | 2              |
+[comment]: <> (Historia de usuario de administrador que ve las estadisticas del restorán, así como también manejar el personal que tiene acceso a la aplicación)
 
 ## Primeros pasos
 
@@ -360,7 +299,6 @@ cd burger-queen
 ### Frameworks / libraries
 
 * [React](https://reactjs.org/)
-* [Vue](https://vuejs.org/)
 * [Angular](https://angular.io/)
 
 ### Herramientas
@@ -387,59 +325,3 @@ cd burger-queen
 ### Cloud functions
 
 * [Cloud functions - Firebase Docs](https://firebase.google.com/docs/functions/?hl=es-419)
-
-## Checklist
-
-### General
-
-* [ ] Producto final sigue los lineamientos del diseño.
-
-### `README.md`
-
-* [ ] Documenta proceso de diseño.
-* [ ] Incluye info para developers (deps, instalación, uso, despliegue, testing,
-  ...).
-
-### Lighthouse
-
-* [ ] 80% o más en sección _Performance_.
-* [ ] 80% o más en sección _Progressive Web App_.
-* [ ] 80% o más en sección _Accessibility_.
-* [ ] 80% o más en sección _Best Practices_.
-
-### Tests
-
-* [ ] 70% o más en cobertura de _statements_.
-* [ ] 70% o más en cobertura de _functions_.
-* [ ] 70% o más en cobertura de _lines_.
-* [ ] 70% o más en cobertura de _branches_.
-
-### UI
-
-#### Hito 1: Tomar pedidos
-
-* [ ] Ingresar nombre del cliente.
-* [ ] Filtrar _menú_ por _desayuno_ y _resto del día_.
-* [ ] Agregar ítem al pedido.
-* [ ] Eliminar ítem del pedido.
-* [ ] Mostrar _resumen_ de pedido con todos los items y el total.
-* [ ] Enviar a cocina (esto debe guardar el pedido).
-
-#### Hito 2: Ver/atender pedidos
-
-* [ ] Vista de pedidos pendientes.
-* [ ] Marcar pedido como listo.
-* [ ] Ver historial de pedidos.
-
-#### Hito 3: Autenticación
-
-* [ ] Inicio de sesión.
-* [ ] Restaurar contraseña.
-
-### UX
-
-* [ ] Se _ve_ bien y _funciona_ bien en tablets.
-* [ ] Se puede _agregar a la pantalla de inicio_ como web app (tiene manifest,
-  íconos, ...) en iOS y Android.
-* [ ] Uso fácil en pantallas táctiles (touch screens).
-* [ ] Estado actual del pedido siempre visible mientras tomamos un pedido.
