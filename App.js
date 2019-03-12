@@ -3,7 +3,7 @@ import './App.css';
 import Name from './components/Name';
 import {menu} from './menu.json';
 
-// hola
+// hola yo
 
 class App extends Component {
   constructor(){
