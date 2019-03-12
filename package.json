@@ -1,8 +1,20 @@
 {
-  "name": "burger",
-  "version": "0.1.0",
-  "private": true,
+  "name": "scl007-burgerqueen",
+  "version": "1.0.0",
+  "description": "Nos acaban de enviar un correo con una solicitud para un nuevo proyecto. Hay un\r restaurante que nos ha contactado porque quieren que alguien les construya una\r interfaz donde puedan tomar pedidos usando una tablet.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verioska/SCL007-BurgerQueen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/verioska/SCL007-BurgerQueen/issues"
+  },
+  "homepage": "https://burgerqueen-d8eb9.firebaseapp.com",
   "dependencies": {
+    "firebase": "^5.8.5",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5"
