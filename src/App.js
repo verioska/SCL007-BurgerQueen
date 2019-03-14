@@ -99,13 +99,15 @@ class App extends Component {
     return (
       <div className="App">
 
-      <nav class="navbar">Burguer Queen</nav>
+      <nav className="navbar">
+        <h1 >Burger Queen</h1>
+       </nav>
       <div className ="container">
        {/* <div className ="row"> */}
        <div className="col-md-12">
 
          <div className="Screen1"> 
-          <h1 className="waiters">Garzon</h1>
+          <h2 className="waiters">Garzon</h2>
             <Name
             onSubmit={this.handleSubmit}
             onChange={this.handleChange}
@@ -124,7 +126,7 @@ class App extends Component {
         </div>
     
         <div className="Screen2">
-          <h1 className="kitchen">Cocina</h1>
+          <h2 className="kitchen">Cocina</h2>
           <p>{this.state.items.text}</p>
         </div>
       </div>

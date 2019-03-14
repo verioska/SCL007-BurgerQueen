@@ -9,7 +9,11 @@
     box-shadow: none;
 }
 
-.send{
+#send{
     background-color: rgb(44, 42, 42);
     color:white;
+    width: 5rem;
+   
+    height: 2rem;
+    font-size: 15px;
 }
