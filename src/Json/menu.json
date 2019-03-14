@@ -1,22 +1,22 @@
 {
     "menu":{
-        "desayuno":[
+        "breakfast":[
     
             {
                 "tipo":"Cafe Americano",
-                "precio":"500"
+                "precio":"$500"
             },
             {
                 "tipo":"Cafe con Leche",
-                "precio":"700"
+                "precio":"$700"
             },
             {
                 "tipo":"Sandwich de jamón y queso",
-                "precio":"1000"
+                "precio":"$1000"
             },
             {
                 "tipo":"Jugo natural",
-                "precio":"700"
+                "precio":"$700"
             }
         ]
     }

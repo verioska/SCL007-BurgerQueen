@@ -6,12 +6,13 @@ function Name (props) {
  
     return (
       <div >
-        <h3>Ingresar Nombre</h3>
+       
         <form onSubmit={props.onSubmit}>
           <input
             id="new-todo"
            onChange={props.onChange}
             value={props.text}
+            placeholder="Nombre del Cliente"
             />
           <button>
             enviar

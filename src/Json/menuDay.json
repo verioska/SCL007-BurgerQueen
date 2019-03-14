@@ -1,0 +1,67 @@
+{
+    "menuDay":{
+        "day":[
+    
+            {
+                "name":"Hamburguesa Simple",
+                "tipo":"res",
+                "precio":"$1500"
+            },
+            {
+                "name":"Hamburguesa Doble",
+                "tipo":"res",
+                "precio":"$2500"
+            }, 
+            {
+                "name":"Hamburguesa Simple",
+                "tipo":"pollo",
+                "precio":"$1500"
+            },
+            {
+                "name":"Hamburguesa Doble",
+                "tipo":"pollo",
+                "precio":"$2500"
+            },
+            {
+                "name":"Acompañamiento",
+                "tipo":"Papas fritas",
+                "precio":"$500"
+            },
+            {
+                "name":"Acompañamiento",
+                "tipo":"Onion Rings",
+                "precio":"$500"
+            },
+            {
+                "name":"Bebidas",
+                "tipo":"Agua 500ml",
+                "precio":"$500"
+            },
+            {
+                "name":"Bebidas",
+                "tipo":"Agua 750ml",
+                "precio":"$800"
+            },
+            {
+                "name":"Bebidas",
+                "tipo":"Gaseosa 500ml",
+                "precio":"$700"
+            },
+            {
+                "name":"Bebidas",
+                "tipo":"Agua 750ml",
+                "precio":"$1000"
+            },
+            {
+                "name":"Extra",
+                "tipo":"Queso",
+                "precio":"$500"
+            },
+            {
+                "name":"Extra",
+                "tipo":"Huevo",
+                "precio":"$500"
+            }
+        ]
+    }
+}
