@@ -14,7 +14,7 @@ function Name (props) {
             value={props.text}
             placeholder="Nombre del Cliente"
             />
-          <button>
+          <button className="send">
             enviar
           </button>
           
