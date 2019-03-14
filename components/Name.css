@@ -6,4 +6,10 @@
 #new-todo{
     margin:1rem;
     font-size: 13px;
+    box-shadow: none;
+}
+
+.send{
+    background-color: rgb(44, 42, 42);
+    color:white;
 }

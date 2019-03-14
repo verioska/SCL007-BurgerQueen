@@ -70,8 +70,8 @@ class App extends Component {
     const info=arr[0].map((e)=>{
       return(
         <div >
-          <button>
-            {e.tipo + " "}
+          <button className="btn btn-secondary btn-lg" id="bBreakfast">
+            {e.tipo + " "}<br/>
             {e.precio + " "}
           </button>
         </div>
@@ -87,9 +87,9 @@ class App extends Component {
   const infoDay=arrDay[0].map((e)=>{
     return(
       <div >
-        <button>
-        {e.name + " "} 
-        { e.tipo + " "}
+        <button className="btn btn-secondary btn-lg" id="bDay">
+        {e.name + " "} <br/>
+        { e.tipo + " "}<br/>
           {e.precio + " "}
         </button>
       </div>
@@ -100,7 +100,11 @@ class App extends Component {
       <div className="App">
 
       <nav class="navbar">Burguer Queen</nav>
-        <div className="Screen1"> 
+      <div className ="container">
+       {/* <div className ="row"> */}
+       <div className="col-md-12">
+
+         <div className="Screen1"> 
           <h1 className="waiters">Garzon</h1>
             <Name
             onSubmit={this.handleSubmit}
@@ -110,10 +114,13 @@ class App extends Component {
             <Breakfast onClick={this.breakfastfunction}/>
             <ButtonDay onClickDay={this.menuDayfunction}/>
         
-          <div className="button" >
+       
+          
             {this.state.buttonBreakfast && info}
             {this.state.buttonDay && infoDay}
-          </div>
+          
+  
+
         </div>
     
         <div className="Screen2">
@@ -121,6 +128,9 @@ class App extends Component {
           <p>{this.state.items.text}</p>
         </div>
       </div>
+       </div>
+       </div>
+      //  </div>
     );
   }
 }
