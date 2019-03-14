@@ -2,3 +2,8 @@
 
     margin-left: 900px;
 }
+
+#new-todo{
+    margin:1rem;
+    font-size: 13px;
+}

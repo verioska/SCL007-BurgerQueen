@@ -2,18 +2,11 @@
   text-align: center;
 }
 
-.Screen1 {
+.Screen1,.Screen2 {
   float: left;
   width: 50%;
   height: 100%;
  
-}
-
-.Screen2 {
-  float: left;
-  width: 50%;
-  height: 100%;
-  
 }
 
 .button{
@@ -21,14 +14,12 @@
   margin-top: 10%;
 }
 
-
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.waiters, .kitchen{
+  margin: 1rem;
 }
+
+.navbar{
+  background-color:rgb(44, 42, 42); 
+  color:white;
+}
+
