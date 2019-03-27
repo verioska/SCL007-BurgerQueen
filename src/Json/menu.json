@@ -3,20 +3,20 @@
         "breakfast":[
     
             {
-                "tipo":"Cafe Americano",
-                "precio":"$500"
+                "type":"Cafe Americano",
+                "price":500
             },
             {
-                "tipo":"Cafe con Leche",
-                "precio":"$700"
+                "type":"Cafe con Leche",
+                "price":700
             },
             {
-                "tipo":"Sandwich de jamón y queso",
-                "precio":"$1000"
+                "type":"Sandwich de jamón y queso",
+                "price":1000
             },
             {
-                "tipo":"Jugo natural",
-                "precio":"$700"
+                "type":"Jugo natural",
+                "price":700
             }
         ]
     }

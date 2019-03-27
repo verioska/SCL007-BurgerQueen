@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Name from './components/Name';
-import Breakfast from './components/Breakfast';
-import ButtonDay from './components/ButtonDay';
+import Name from './components/Name/Name';
+import Breakfast from './components/Breakfast/Breakfast';
+import MenuDelDia from './components/MenuDelDia/MenuDelDia';
+import Orders from './components/Pedidos/Orders';
+ import OrdersDay from './components/Pedidos/OrdersDay';
 import {menu} from './Json/menu.json';
 import {menuDay} from './Json/menuDay.json';
 
@@ -18,13 +20,27 @@ class App extends Component {
       text: '',
       buttonBreakfast:false,
       buttonDay:false,
-    }
+      arrOrders:[],
+    
+   }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.breakfastfunction=this.breakfastfunction.bind(this);
     this.menuDayfunction=this.menuDayfunction.bind(this);
+    this.funtionbtn=this.funtionbtn.bind(this);
+    
   }
-  
+ 
+funtionbtn(item){
+  const orden=this.state.arrOrders;
+  orden.push(item)
+  this.setState({
+    ...this.state,
+     arrOrders:orden,
+    
+  })
+} 
+
   breakfastfunction(){
     this.setState({
       ...this.state,
@@ -70,9 +86,9 @@ class App extends Component {
     const info=arr[0].map((e)=>{
       return(
         <div >
-          <button className="btn btn-secondary btn-lg" id="bBreakfast">
-            {e.tipo + " "}<br/>
-            {e.precio + " "}
+          <button onClick={()=>this.funtionbtn(e)}  className="btn btn-secondary btn-lg" id="bBreakfast">
+            {e.type + " "}<br/>
+            {e.price + " "}
           </button>
         </div>
       )
@@ -87,10 +103,10 @@ class App extends Component {
   const infoDay=arrDay[0].map((e)=>{
     return(
       <div >
-        <button className="btn btn-secondary btn-lg" id="bDay">
+        <button onClick={()=>this.funtionbtn(e)}  className="btn btn-secondary btn-lg" id="bDay">
         {e.name + " "} <br/>
-        { e.tipo + " "}<br/>
-          {e.precio + " "}
+        { e.type + " "}<br/>
+          {e.price + " "}
         </button>
       </div>
     )
@@ -103,7 +119,6 @@ class App extends Component {
         <h1 >Burger Queen</h1>
        </nav>
       <div className ="container">
-       {/* <div className ="row"> */}
        <div className="col-md-12">
 
          <div className="Screen1"> 
@@ -114,20 +129,22 @@ class App extends Component {
             items={this.state.items}
             text={this.state.text}/>
             <Breakfast onClick={this.breakfastfunction}/>
-            <ButtonDay onClickDay={this.menuDayfunction}/>
+            <MenuDelDia onClickDay={this.menuDayfunction}/>
         
-       
-          
             {this.state.buttonBreakfast && info}
             {this.state.buttonDay && infoDay}
           
   
 
         </div>
+
     
         <div className="Screen2">
-          <h2 className="kitchen">Cocina</h2>
+          <h2 className="kitchen">Pedido</h2>
           <p>{this.state.items.text}</p>
+          <Orders items={this.state.arrOrders}/>
+        
+          {this.state.funtionbtn}
         </div>
       </div>
        </div>

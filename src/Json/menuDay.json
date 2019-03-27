@@ -4,63 +4,63 @@
     
             {
                 "name":"Hamburguesa Simple",
-                "tipo":"res",
-                "precio":"$1500"
+                "type":"res",
+                "price":1500
             },
             {
                 "name":"Hamburguesa Doble",
-                "tipo":"res",
-                "precio":"$2500"
+                "type":"res",
+                "price":2500
             }, 
             {
                 "name":"Hamburguesa Simple",
-                "tipo":"pollo",
-                "precio":"$1500"
+                "type":"pollo",
+                "price":1500
             },
             {
                 "name":"Hamburguesa Doble",
-                "tipo":"pollo",
-                "precio":"$2500"
+                "type":"pollo",
+                "price":2500
             },
             {
                 "name":"Acompañamiento",
-                "tipo":"Papas fritas",
-                "precio":"$500"
+                "type":"Papas fritas",
+                "price":500
             },
             {
                 "name":"Acompañamiento",
-                "tipo":"Onion Rings",
-                "precio":"$500"
+                "type":"Onion Rings",
+                "price":500
             },
             {
                 "name":"Bebidas",
-                "tipo":"Agua 500ml",
-                "precio":"$500"
+                "type":"Agua 500ml",
+                "price":500
             },
             {
                 "name":"Bebidas",
-                "tipo":"Agua 750ml",
-                "precio":"$800"
+                "type":"Agua 750ml",
+                "price":800
             },
             {
                 "name":"Bebidas",
-                "tipo":"Gaseosa 500ml",
-                "precio":"$700"
+                "type":"Gaseosa 500ml",
+                "price":700
             },
             {
                 "name":"Bebidas",
-                "tipo":"Agua 750ml",
-                "precio":"$1000"
+                "type":"Agua 750ml",
+                "price":1000
             },
             {
                 "name":"Extra",
-                "tipo":"Queso",
-                "precio":"$500"
+                "type":"Queso",
+                "price":500
             },
             {
                 "name":"Extra",
-                "tipo":"Huevo",
-                "precio":"$500"
+                "type":"Huevo",
+                "price":500
             }
         ]
     }

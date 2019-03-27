@@ -24,4 +24,5 @@ it('consigueme el componente Breakfast, dentro de App', () => {
   expect(infoButtonDay.find('ButtonDay').length).toBe(1);
  
  });
+
  
