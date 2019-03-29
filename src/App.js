@@ -4,9 +4,9 @@ import Name from './components/Name/Name';
 import Breakfast from './components/Breakfast/Breakfast';
 import MenuDelDia from './components/MenuDelDia/MenuDelDia';
 import Orders from './components/Pedidos/Orders';
- import OrdersDay from './components/Pedidos/OrdersDay';
 import {menu} from './Json/menu.json';
 import {menuDay} from './Json/menuDay.json';
+import {database} from './provider';
 
             
 
@@ -21,6 +21,7 @@ class App extends Component {
       buttonBreakfast:false,
       buttonDay:false,
       arrOrders:[],
+      total:0,
     
    }
     this.handleChange = this.handleChange.bind(this);
@@ -28,15 +29,19 @@ class App extends Component {
     this.breakfastfunction=this.breakfastfunction.bind(this);
     this.menuDayfunction=this.menuDayfunction.bind(this);
     this.funtionbtn=this.funtionbtn.bind(this);
-    
+    this.delete=this.delete.bind(this);
+    this.handleFirebase=this.handleFirebase.bind(this);
+    this.mostrarfirebase=this.mostrarfirebase.bind(this)
   }
  
 funtionbtn(item){
   const orden=this.state.arrOrders;
+ const newTotal=this.state.total+item.price;
   orden.push(item)
   this.setState({
     ...this.state,
      arrOrders:orden,
+     total: newTotal,
     
   })
 } 
@@ -57,6 +62,33 @@ funtionbtn(item){
     })
   }
 
+  delete(a){
+    const deleteTotal=this.state.total-a.price;
+    const sinItem = this.state.arrOrders.filter((b) =>{
+      return b !== a
+    });
+    const itemss = this.state.arrOrders.filter((b) =>{
+      return b === a
+    })
+    if(itemss.length === 1){
+    this.setState({
+     ...this.state,
+     total:deleteTotal,
+     arrOrders: this.state.arrOrders.filter((b) =>{
+       return b !== a
+     })
+    })
+  } else {
+    itemss.pop()
+    const filtered = sinItem.concat(itemss)
+    this.setState({
+      ...this.state,
+      total:deleteTotal,
+      arrOrders: filtered,
+    })
+  }
+  }
+
   handleChange(e) {
     this.setState({ text: e.target.value });
   }
@@ -75,7 +107,30 @@ funtionbtn(item){
       text: ''
     });
   }
+  handleFirebase(){
+    const order = {
+     name: this.state.text,
+     order: this.state.arrOrders
+    };
+   
+    let newPostKey = database.ref('Cocina').push().key;
+   
+    let updates = {};
+    updates['Cocina/'+ newPostKey] = order;
+   
+   
+    return database.ref().update(updates);
+   }
 
+   mostrarfirebase(){
+
+    database.ref('Cocina').on('value',(snap)=>{
+      const imprimir=snap.val();
+      console.log(snap.val())
+     
+      return imprimir
+    })
+   }
   render() {
   //Para imprimir el menu del desayuno
     const arr=[]
@@ -100,9 +155,9 @@ funtionbtn(item){
     arrDay.push(this.state.menuDay[i])
   }
 
-  const infoDay=arrDay[0].map((e)=>{
+  const infoDay=arrDay[0].map((e,i)=>{
     return(
-      <div >
+      <div key={i}>
         <button onClick={()=>this.funtionbtn(e)}  className="btn btn-secondary btn-lg" id="bDay">
         {e.name + " "} <br/>
         { e.type + " "}<br/>
@@ -142,14 +197,21 @@ funtionbtn(item){
         <div className="Screen2">
           <h2 className="kitchen">Pedido</h2>
           <p>{this.state.items.text}</p>
-          <Orders items={this.state.arrOrders}/>
+          <Orders items={this.state.arrOrders}
+          total={this.state.total}
+          deleteOrders={this.delete}
+          firebase={this.handleFirebase}
+          onClick={this.mostrarfirebase}
+          />
         
           {this.state.funtionbtn}
         </div>
       </div>
        </div>
+       <p>{this.mostrarFirebase}</p>
        </div>
       //  </div>
+
     );
   }
 }

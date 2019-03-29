@@ -1,53 +1,60 @@
 import React,{Component} from 'react';
 
+
 class Orders extends React.Component{
     constructor(props){
         super(props);
-        this.props = {...props}
+        // this.props = {...props}
         this.state={
             itemsSeleccionados:[],
-            total:0,
+            
         }
     }
 
     componentDidUpdate(props){
         
         if (props.items.length !== this.state.itemsSeleccionados.length) {
-          
-            this.setState((state, props) => {
+                this.setState((state, props) => {
                 return {itemsSeleccionados: props.items}
             });
             
         } 
     }
+
     render(){
-        let newTota=0;
-        for(let i=0;i<this.state.itemsSeleccionados.length; i++){
-            newTota+=this.state.itemsSeleccionados[i].price
-           
-        }
-        if(newTota!=this.state.total){
-            this.setState({total:newTota})
-        }
-        let items = this.state.itemsSeleccionados.map((e) => {
+  
+        let items = this.props.items.map((e, i) => {
             return (
-                <React.Fragment>
-                    <div>Nombre: {e.name}</div>
-                    <div>Tipo: {e.type}</div>
-                    <div>Precio: {e.price}</div>
-                    <button>Eliminar</button>
+                <React.Fragment key={i}>
+                    <tr key= {i} >
+                        <td key={e.name}>{e.name}</td>
+                        <td key={e.type}>{e.type}</td>
+                        <td key={e.price}> {e.price}</td>
+                        <button   onClick={()=>this.props.deleteOrders(e)}>x</button>
+                    </tr>
                 </React.Fragment>
             )
         });
         return (
             <React.Fragment>
-                <div className="listado">
-                    {items}
-                </div>
-                <h2>Total: {this.state.total}</h2>
+                <table className="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {items}
+                        <h2>Total: {this.props.total} </h2>
+                        <button onClick={this.props.firebase}>Enviar a cocina</button>
+                        <button onClick={this.props.onClick}>cocina</button>
+                    </tbody>
+                </table>
             </React.Fragment>
         );
     }
 }
-
 export default Orders;
