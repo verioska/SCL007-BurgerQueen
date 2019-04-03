@@ -7,8 +7,8 @@ import Orders from './components/Pedidos/Orders';
 import {menu} from './Json/menu.json';
 import {menuDay} from './Json/menuDay.json';
 import {database} from './provider';
+import Kitchen from './components/Kitchen/Kitchen';
 
-            
 
 class App extends Component {
   constructor(){
@@ -22,6 +22,7 @@ class App extends Component {
       buttonDay:false,
       arrOrders:[],
       total:0,
+      btnKitchen:false,
     
    }
     this.handleChange = this.handleChange.bind(this);
@@ -31,9 +32,18 @@ class App extends Component {
     this.funtionbtn=this.funtionbtn.bind(this);
     this.delete=this.delete.bind(this);
     this.handleFirebase=this.handleFirebase.bind(this);
-    this.mostrarfirebase=this.mostrarfirebase.bind(this)
+    this.toshowfirebase=this.toshowfirebase.bind(this)
+    this.functionKitchen=this.functionKitchen.bind(this)
   }
  
+functionKitchen() {
+  this.setState({
+    ...this.state,
+    btnKitchen:true,
+    
+  })
+  
+}
 funtionbtn(item){
   const orden=this.state.arrOrders;
  const newTotal=this.state.total+item.price;
@@ -122,7 +132,7 @@ funtionbtn(item){
     return database.ref().update(updates);
    }
 
-   mostrarfirebase(){
+   toshowfirebase(){
 
     database.ref('Cocina').on('value',(snap)=>{
       const imprimir=snap.val();
@@ -173,7 +183,7 @@ funtionbtn(item){
       <nav className="navbar">
         <h1 >Burger Queen</h1>
        </nav>
-      <div className ="container">
+      {!this.state.btnKitchen && <div className ="container">
        <div className="col-md-12">
 
          <div className="Screen1"> 
@@ -201,18 +211,28 @@ funtionbtn(item){
           total={this.state.total}
           deleteOrders={this.delete}
           firebase={this.handleFirebase}
-          onClick={this.mostrarfirebase}
+          onClick={this.toshowfirebase}
+          kitchen={this.functionKitchen}
           />
         
           {this.state.funtionbtn}
         </div>
       </div>
-       </div>
-       <p>{this.mostrarFirebase}</p>
-       </div>
-      //  </div>
+       <div>
 
-    );
+          <p>{this.mostrarFirebase}</p>
+          </div>
+       </div>
+      }
+
+      {this.state.btnKitchen &&
+          <Kitchen/>
+
+
+      }
+    </div>
+
+      );
   }
 }
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Name from './App';
+import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
-    <Name/>,
+    <App/>,
     document.getElementById('root')
   );
 

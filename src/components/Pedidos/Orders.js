@@ -48,7 +48,7 @@ class Orders extends React.Component{
                         {items}
                         <h2>Total: {this.props.total} </h2>
                         <button onClick={this.props.firebase}>Enviar a cocina</button>
-                        <button onClick={this.props.onClick}>cocina</button>
+                        <button onClick={this.props.kitchen}>cocina</button>
                     </tbody>
                 </table>
             </React.Fragment>

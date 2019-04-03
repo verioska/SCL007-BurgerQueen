@@ -2,9 +2,28 @@ import React from 'react';
 import App from './App';
 import {shallow} from 'enzyme';
 import { configure } from 'enzyme';
+import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { exportAllDeclaration } from '@babel/types';
 configure({ adapter: new Adapter() });
+
+it('El espera imprimir el nombre', () => {  
+ 
+const  burgerComponent= Enzyme.mount(<App/>);
+const imputComponent= burgerComponent.find("Name").find('input');
+const buttonComponent=burgerComponent.find("Name").find('button');
+imputComponent.simulate('change', { target: {value: 'verioska'} });
+buttonComponent.simulate('click');
+  expect(burgerComponent.state().text).toEqual('verioska');
+});
+it('El espera imprimir el resultado del boton', () => { 
+
+  const  burgerComponent= Enzyme.mount(<App/>);
+  const imputComponent= burgerComponent.find("Name").find('input');
+  const buttonComponent=burgerComponent.find("Name").find('button');
+  imputComponent.simulate('change', { target: {value: 'verioska'} });
+  buttonComponent.simulate('click');
+    expect(burgerComponent.state().text).toEqual('verioska');
+  });
 
 it('consigueme el componente Name, dentro de App', () => {
   
